@@ -1,0 +1,4 @@
+{
+    "video": true,
+    "videosFolder": "cypress/videos"
+  }
