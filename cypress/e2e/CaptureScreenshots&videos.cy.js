@@ -1,5 +1,5 @@
 
-describe('mysuite', ()=>{
+describe('mySuite', ()=>{
 
     it('Capture screenshots & Videos', ()=>{
     cy.visit('https://demo.opencart.com/');
