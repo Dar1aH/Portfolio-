@@ -5,7 +5,7 @@
 
 describe('Custom commands', ()=>{
 
-it('handling links', ()=>{
+it.skip('handling links', ()=>{
 cy.visit('https://demo.nopcommerce.com/');
 //direct approach - without using custom command
 //===> cy.get('.product-title> a:contains("Apple MacBook Pro 13-inch")').click();
@@ -25,9 +25,18 @@ it.skip('Overwriting existing command', ()=>{
 })
 
 
-   it.skip('Login command', ()=>{
+   it.only('Login command', ()=>{
+      cy.visit('https://demo.nopcommerce.com/');
+   // Login
+   // Search product
+   // I want to multiply the login for several test cases
+   //I've already created a custom command for this in commands.js file
 
+    cy.clickLink("Log in"); //custom command 
+    cy.wait(3000);
+    cy.loginapp("email","password"); //custom command
 
+    cy.get('li>a.ico-account').should('have.text','My account');
 })
 
 })

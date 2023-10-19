@@ -37,4 +37,9 @@ Cypress.Commands.add('getIframe', (iframe)=>{ //get iframe is a command
     })    
 
 
-    
+    // custom command for login can be called from any time and anywhere for multiple tests
+    Cypress.Commands.add("loginapp", (email,password)=>{
+    cy.get('#Email').type('daxundaintravel@gmail.com');
+    cy.get('#Password').type('test123');
+    cy.get('.button-1.login-button').click();
+    })
